@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://donu7lr6tn3ti"]
+
+[ext_resource type="Script" uid="uid://dfgo6mujb35gu" path="res://scripts/interactables/body.gd" id="1_0bq34"]
+[ext_resource type="Texture2D" uid="uid://dped2yhvkmw0j" path="res://assets/external/char free/char free/corpse.png" id="2_crps3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bq34"]
+size = Vector2(62, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crps3"]
+size = Vector2(66, 43)
+
+[node name="Body" type="StaticBody2D" unique_id=1378807337]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1000498860]
+shape = SubResource("RectangleShape2D_0bq34")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1699332550]
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("2_crps3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1983938421]
+script = ExtResource("1_0bq34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=436066141]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_crps3")

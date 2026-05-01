@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dykjecmb28twn"]
+
+[ext_resource type="Texture2D" uid="uid://b655ma6ghpgqq" path="res://assets/external/NoirNights_PetricakeGames.png" id="1_5dnex"]
+[ext_resource type="Script" uid="uid://dgnl6ysred4e0" path="res://scripts/interactables/door.gd" id="2_g3bi5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3skj8"]
+size = Vector2(48, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpk0x"]
+size = Vector2(52, 51)
+
+[node name="Door" type="StaticBody2D" unique_id=212731603]
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=771571362]
+scale = Vector2(3, 3)
+texture = ExtResource("1_5dnex")
+region_enabled = true
+region_rect = Rect2(96, 64, 16, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=337887137]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_3skj8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1359479593]
+script = ExtResource("2_g3bi5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=440608806]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_rpk0x")

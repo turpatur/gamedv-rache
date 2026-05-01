@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://d3e5nw0b1udlh"]
+
+[ext_resource type="Script" uid="uid://i4kgg2y5yltp" path="res://scripts/ui/title_screen.gd" id="1_ny3vc"]
+[ext_resource type="FontFile" uid="uid://50mmi1flijpy" path="res://assets/external/Ignotum_Font_1_10/TrueType (.ttf)/Ignotum-Bold.ttf" id="3_bold"]
+[ext_resource type="Texture2D" uid="uid://b655ma6ghpgqq" path="res://assets/external/NoirNights_PetricakeGames.png" id="4_tiles"]
+[ext_resource type="Shader" uid="uid://cl0nmsvjuv75n" path="res://assets/shaders/ui_vignette.gdshader" id="5_vignette"]
+[ext_resource type="Shader" uid="uid://o1gqswblic8g" path="res://assets/shaders/ui_scanline.gdshader" id="6_scanline"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vignette"]
+shader = ExtResource("5_vignette")
+shader_parameter/vignette_color = Color(0, 0, 0, 0.76)
+shader_parameter/inner_radius = 0.18
+shader_parameter/outer_radius = 0.76
+
+[sub_resource type="FontVariation" id="FontVariation_body"]
+base_font = ExtResource("3_bold")
+spacing_glyph = 4
+
+[sub_resource type="FontVariation" id="FontVariation_title"]
+base_font = ExtResource("3_bold")
+spacing_glyph = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_normal"]
+bg_color = Color(0.036, 0.037, 0.034, 0.78)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.45, 0.46, 0.4, 0.95)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_pressed"]
+bg_color = Color(0.16, 0.032, 0.032, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.62, 0.12, 0.1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.08, 0.082, 0.074, 0.86)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.71, 0.62, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_scanline"]
+shader = ExtResource("6_scanline")
+shader_parameter/screen_height = 620.0
+shader_parameter/line_period = 4.0
+shader_parameter/dim_alpha = 0.13
+
+[node name="TitleScreen" type="Control" unique_id=1123981268]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ny3vc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=380509424]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.018, 0.019, 0.017, 1)
+
+[node name="TileGrid" type="TextureRect" parent="Background" unique_id=584595013]
+self_modulate = Color(0.24, 0.25, 0.22, 0.2)
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_tiles")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="RedWash" type="ColorRect" parent="Background" unique_id=5431923]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.18, 0.015, 0.018, 0.18)
+
+[node name="Vignette" type="ColorRect" parent="Background" unique_id=1035559850]
+material = SubResource("ShaderMaterial_vignette")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Corners" type="Control" parent="." unique_id=82467089]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 56.0
+offset_bottom = 58.0
+
+[node name="TopLeft" type="Control" parent="Corners" unique_id=101850951]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CornerTopLeftV" type="ColorRect" parent="Corners/TopLeft" unique_id=1947840720]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 34.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="CornerTopLeftH" type="ColorRect" parent="Corners/TopLeft" unique_id=1014748383]
+layout_mode = 0
+offset_right = 34.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="TopRight" type="Control" parent="Corners" unique_id=1913270949]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CornerTopRightH" type="ColorRect" parent="Corners/TopRight" unique_id=1690188131]
+layout_mode = 0
+offset_left = 794.0
+offset_right = 828.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="CornerTopRightV" type="ColorRect" parent="Corners/TopRight" unique_id=1527373075]
+layout_mode = 0
+offset_left = 827.0
+offset_right = 828.0
+offset_bottom = 34.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="BottomLeft" type="Control" parent="Corners" unique_id=955935828]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CornerBottomLeftH" type="ColorRect" parent="Corners/BottomLeft" unique_id=360237111]
+layout_mode = 0
+offset_top = 570.0
+offset_right = 34.0
+offset_bottom = 571.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="CornerBottomLeftV" type="ColorRect" parent="Corners/BottomLeft" unique_id=296647583]
+layout_mode = 0
+offset_top = 536.0
+offset_right = 1.0
+offset_bottom = 571.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="BottomRight" type="Control" parent="Corners" unique_id=897958101]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CornerBottomRightH" type="ColorRect" parent="Corners/BottomRight" unique_id=1322260264]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 570.0
+offset_right = 828.0
+offset_bottom = 571.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="CornerBottomRightV" type="ColorRect" parent="Corners/BottomRight" unique_id=339024362]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 536.0
+offset_right = 828.0
+offset_bottom = 571.0
+mouse_filter = 2
+color = Color(0.45, 0.45, 0.39, 0.7)
+
+[node name="CaseFileLabel" type="Label" parent="." unique_id=1416556413]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 34.0
+offset_right = 210.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.42, 0.43, 0.38, 0.72)
+theme_override_fonts/font = SubResource("FontVariation_body")
+theme_override_font_sizes/font_size = 15
+text = "CASE #1048596"
+
+[node name="BloodDrip" type="Line2D" parent="." unique_id=416380292]
+position = Vector2(430, 10)
+points = PackedVector2Array(0, 0, 0, 56)
+width = 1.0
+default_color = Color(0.353, 0.063, 0.063, 1)
+
+[node name="BloodDrop" type="ColorRect" parent="." unique_id=1682993889]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 66.0
+offset_right = 431.0
+offset_bottom = 69.0
+mouse_filter = 2
+color = Color(0.353, 0.063, 0.063, 1)
+
+[node name="TitleBlock" type="VBoxContainer" parent="." unique_id=589140729]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 178.0
+offset_right = 710.0
+offset_bottom = 336.0
+theme_override_constants/separation = 30
+
+[node name="TitleLine" type="HBoxContainer" parent="TitleBlock" unique_id=1878768656]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="RedTitleR" type="Label" parent="TitleBlock/TitleLine" unique_id=576574198]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.05, 0.055, 0.88)
+theme_override_colors/font_outline_color = Color(0.04, 0.01, 0.01, 1)
+theme_override_constants/line_spacing = 4
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_title")
+theme_override_font_sizes/font_size = 72
+text = "R "
+horizontal_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="TitleBlock/TitleLine" unique_id=1186712876]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.79, 0.7, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.018, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("FontVariation_title")
+theme_override_font_sizes/font_size = 72
+text = "A C H E"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="TitleBlock" unique_id=105757940]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57, 0.58, 0.51, 0.95)
+theme_override_colors/font_outline_color = Color(0.018, 0.018, 0.016, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_body")
+theme_override_font_sizes/font_size = 20
+text = "ONE ROOM,  ONE BLOOD MESSAGE,
+ONE MISTAKE WAITING TO REPEAT"
+horizontal_alignment = 1
+
+[node name="ButtonPanel" type="PanelContainer" parent="." unique_id=1912088595]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 388.0
+offset_right = 532.0
+offset_bottom = 444.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_button_normal")
+
+[node name="InnerBorder" type="ColorRect" parent="ButtonPanel" unique_id=290685251]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.45, 0.46, 0.4, 0.2)
+
+[node name="StartButton" type="Button" parent="ButtonPanel" unique_id=1967863552]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.9, 0.76, 1)
+theme_override_colors/font_focus_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.035, 0.035, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 0.82, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.018, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_body")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
+text = "INVESTIGATE"
+
+[node name="ButtonCaret" type="Label" parent="ButtonPanel" unique_id=520707783]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.71, 0.64, 1)
+theme_override_fonts/font = SubResource("FontVariation_body")
+theme_override_font_sizes/font_size = 16
+text = ">|"
+
+[node name="HintLabel" type="Label" parent="." unique_id=1066528065]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 566.0
+offset_right = 620.0
+offset_bottom = 588.0
+theme_override_colors/font_color = Color(0.36, 0.36, 0.32, 0.75)
+theme_override_colors/font_outline_color = Color(0.018, 0.018, 0.016, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_body")
+theme_override_font_sizes/font_size = 20
+text = "ENTER   /   SPACE   /   E   TO CONTINUE"
+horizontal_alignment = 1
+
+[node name="Scanline" type="ColorRect" parent="." unique_id=1356125538]
+material = SubResource("ShaderMaterial_scanline")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

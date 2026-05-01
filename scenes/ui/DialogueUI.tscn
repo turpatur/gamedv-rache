@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cy4ce5la0wjvd"]
+
+[ext_resource type="Script" uid="uid://bwoly8n1titin" path="res://scripts/ui/dialogue_ui.gd" id="1_6snq5"]
+[ext_resource type="FontFile" uid="uid://ibgwn6ei2xw0" path="res://assets/external/Ignotum_Font_1_10/TrueType (.ttf)/Ignotum-Regular.ttf" id="2_w8nx0"]
+[ext_resource type="Texture2D" uid="uid://cgiysple83jrm" path="res://assets/external/1Bit_UI_pack_byBatuhan/1-bit_UI_byBatuhanK.png" id="3_4hmvc"]
+
+[sub_resource type="FontVariation" id="FontVariation_70hjk"]
+base_font = ExtResource("2_w8nx0")
+spacing_glyph = 3
+
+[node name="DialogueUi" type="Control" unique_id=1185273693]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00040472773
+script = ExtResource("1_6snq5")
+
+[node name="DialoguePanel" type="NinePatchRect" parent="." unique_id=93411557]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.681
+anchor_right = 0.92
+anchor_bottom = 0.991
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4hmvc")
+region_rect = Rect2(254, 112, 205, 97)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="MarginContainer" type="MarginContainer" parent="DialoguePanel" unique_id=819332729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0017009077
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 60
+
+[node name="DialogueText" type="Label" parent="DialoguePanel/MarginContainer" unique_id=2115179022]
+custom_minimum_size = Vector2(600, 110)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_70hjk")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3

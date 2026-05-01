@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dns70k3oikjw7"]
+
+[ext_resource type="Script" uid="uid://tunnvrvn315s" path="res://scripts/ui/choice_ui.gd" id="1_kdf0i"]
+[ext_resource type="FontFile" uid="uid://ibgwn6ei2xw0" path="res://assets/external/Ignotum_Font_1_10/TrueType (.ttf)/Ignotum-Regular.ttf" id="2_462fc"]
+[ext_resource type="Texture2D" uid="uid://cxvl66s8ettyr" path="res://assets/external/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-003.png" id="2_it1x3"]
+[ext_resource type="Texture2D" uid="uid://cv1dvc77d5ho3" path="res://assets/external/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-003-hover-chosen.png" id="3_pr5li"]
+[ext_resource type="Texture2D" uid="uid://b6sqmcwogyj1j" path="res://assets/external/kenney_fantasy-ui-borders/PNG/Default/Border/panel-border-003-hover.png" id="4_462fc"]
+
+[sub_resource type="FontVariation" id="FontVariation_462fc"]
+base_font = ExtResource("2_462fc")
+spacing_glyph = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlhgx"]
+texture = ExtResource("2_it1x3")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3lg2"]
+texture = ExtResource("3_pr5li")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8l84f"]
+texture = ExtResource("4_462fc")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="ChoiceUi" type="Control" unique_id=1899657819]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kdf0i")
+
+[node name="Margin" type="PanelContainer" parent="." unique_id=1060986007]
+layout_mode = 0
+offset_right = 860.0
+offset_bottom = 620.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Margin" unique_id=493951322]
+layout_mode = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Margin/MarginContainer" unique_id=1978875194]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Margin/MarginContainer/OptionsContainer" unique_id=154274812]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_462fc")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_mlhgx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p3lg2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8l84f")
+
+[node name="Button2" type="Button" parent="Margin/MarginContainer/OptionsContainer" unique_id=1150908533]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_462fc")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_mlhgx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p3lg2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8l84f")
+
+[node name="Button3" type="Button" parent="Margin/MarginContainer/OptionsContainer" unique_id=539155954]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_462fc")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_mlhgx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p3lg2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8l84f")
+
+[node name="Button4" type="Button" parent="Margin/MarginContainer/OptionsContainer" unique_id=1992610749]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_462fc")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_mlhgx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p3lg2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8l84f")

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://drt1awn5qpaic"]
+
+[ext_resource type="Script" uid="uid://bauv78d23myuh" path="res://scripts/interactables/table.gd" id="1_6xtkh"]
+[ext_resource type="Texture2D" uid="uid://b655ma6ghpgqq" path="res://assets/external/NoirNights_PetricakeGames.png" id="2_x8ft6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xtkh"]
+size = Vector2(96, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb10v"]
+size = Vector2(104, 78)
+
+[node name="Table" type="StaticBody2D" unique_id=2129583410]
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=422586755]
+position = Vector2(1, 1)
+scale = Vector2(3, 3)
+texture = ExtResource("2_x8ft6")
+region_enabled = true
+region_rect = Rect2(176, 1, 32, 23)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056050025]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_6xtkh")
+
+[node name="Bottle" type="Sprite2D" parent="." unique_id=501960787]
+position = Vector2(24, -23)
+scale = Vector2(3, 3)
+texture = ExtResource("2_x8ft6")
+region_enabled = true
+region_rect = Rect2(120, 83, 7, 13)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1505888847]
+script = ExtResource("1_6xtkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2042651443]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_sb10v")

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://uiprif445lrn"]
+
+[ext_resource type="Script" uid="uid://c55dqj8fwa40o" path="res://scripts/ui/ui_root.gd" id="1_wg0fc"]
+[ext_resource type="PackedScene" uid="uid://cm7qm64l2vshv" path="res://scenes/ui/HUD.tscn" id="2_oup3w"]
+[ext_resource type="PackedScene" uid="uid://cy4ce5la0wjvd" path="res://scenes/ui/DialogueUI.tscn" id="3_8j85b"]
+[ext_resource type="PackedScene" uid="uid://dns70k3oikjw7" path="res://scenes/ui/ChoiceUI.tscn" id="4_xe0ev"]
+[ext_resource type="PackedScene" uid="uid://xmkqqh4m64dv" path="res://scenes/ui/VerdictUI.tscn" id="5_t1a5e"]
+[ext_resource type="PackedScene" uid="uid://ctdy5l3q1kp6d" path="res://scenes/ui/DeathUI.tscn" id="6_0qmk2"]
+[ext_resource type="PackedScene" uid="uid://d3e5nw0b1udlh" path="res://scenes/ui/TitleScreen.tscn" id="7_tg1mq"]
+[ext_resource type="PackedScene" uid="uid://csdcbwlb6jebn" path="res://scenes/ui/EndScreen.tscn" id="8_agjb1"]
+[ext_resource type="PackedScene" uid="uid://dv6q6qy3p4tav" path="res://scenes/ui/ProfileOverlay.tscn" id="9_x38io"]
+[ext_resource type="Shader" uid="uid://o1gqswblic8g" path="res://assets/shaders/ui_scanline.gdshader" id="10_scanline"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_global_scanline"]
+shader = ExtResource("10_scanline")
+shader_parameter/screen_height = 620.0
+shader_parameter/line_period = 4.0
+shader_parameter/dim_alpha = 0.08
+
+[node name="UIRoot" type="CanvasLayer" unique_id=1008896775]
+script = ExtResource("1_wg0fc")
+
+[node name="HUD" parent="." unique_id=1336024228 instance=ExtResource("2_oup3w")]
+
+[node name="DialogueUI" parent="." unique_id=1697083846 instance=ExtResource("3_8j85b")]
+
+[node name="ChoiceUI" parent="." unique_id=554563177 instance=ExtResource("4_xe0ev")]
+
+[node name="ProfileOverlay" parent="." unique_id=1321986305 instance=ExtResource("9_x38io")]
+
+[node name="VerdictUI" parent="." unique_id=692636277 instance=ExtResource("5_t1a5e")]
+
+[node name="DeathUI" parent="." unique_id=1400737374 instance=ExtResource("6_0qmk2")]
+
+[node name="TitleScreen" parent="." unique_id=1123981268 instance=ExtResource("7_tg1mq")]
+
+[node name="EndScreen" parent="." unique_id=1148446920 instance=ExtResource("8_agjb1")]
+
+[node name="GlobalScanline" type="ColorRect" parent="." unique_id=1772122439]
+material = SubResource("ShaderMaterial_global_scanline")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

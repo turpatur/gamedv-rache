@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cyva4jw1w6g1d"]
+
+[ext_resource type="Script" uid="uid://upxqmv0v8i4i" path="res://scripts/interactables/rache_wall.gd" id="1_v8g4r"]
+[ext_resource type="FontFile" uid="uid://bl8oaikqwcs3i" path="res://assets/external/ChainsawCarnage_Font_1_04/ChainsawCarnage.ttf" id="2_gh4lb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8g4r"]
+size = Vector2(120, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh4lb"]
+size = Vector2(220, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ruxf"]
+size = Vector2(180, 45)
+
+[node name="RacheWall" type="Area2D" unique_id=1506681512]
+z_index = 1
+script = ExtResource("1_v8g4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=992046170]
+shape = SubResource("RectangleShape2D_v8g4r")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=912553320]
+region_enabled = true
+region_rect = Rect2(153, 0, 16, 16)
+
+[node name="BloodMessage" type="Node2D" parent="." unique_id=342452882]
+z_index = 1
+position = Vector2(0, -30)
+
+[node name="RACHLabel" type="Label" parent="BloodMessage" unique_id=499385215]
+modulate = Color(0.35, 0.05, 0.05, 1)
+z_index = 1
+offset_left = -58.0
+offset_top = -24.0
+offset_right = -58.0
+offset_bottom = -24.0
+rotation = -0.12217305
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("2_gh4lb")
+text = "RACH"
+
+[node name="ELabel" type="Label" parent="BloodMessage" unique_id=374217971]
+modulate = Color(0.35, 0.05, 0.05, 0.45)
+z_index = 1
+offset_left = 54.0
+offset_top = -12.0
+offset_right = 54.0
+offset_bottom = -12.0
+rotation = 0.15707964
+scale = Vector2(1.6, 1.6)
+theme_override_fonts/font = ExtResource("2_gh4lb")
+text = "E"
+
+[node name="Smear" type="Line2D" parent="BloodMessage" unique_id=1009600970]
+modulate = Color(0.28, 0.025, 0.025, 0.7)
+z_index = 1
+position = Vector2(74, 18)
+points = PackedVector2Array(0, 0, 12, 4, 21, 9, 30, 11)
+width = 3.0
+
+[node name="BloodDot" type="Line2D" parent="BloodMessage" unique_id=1726344050]
+modulate = Color(0.28, 0.025, 0.025, 0.55)
+z_index = 1
+position = Vector2(-72, 16)
+points = PackedVector2Array(0, 0, 6, 2, 10, 3)
+width = 2.0
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=32737953]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1675965257]
+shape = SubResource("RectangleShape2D_gh4lb")
+
+[node name="NoWalkBlocker" type="StaticBody2D" parent="." unique_id=1869553914]
+position = Vector2(12, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoWalkBlocker" unique_id=1911216736]
+shape = SubResource("RectangleShape2D_1ruxf")

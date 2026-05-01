@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ctdy5l3q1kp6d"]
+
+[ext_resource type="Script" uid="uid://di8pq8hchg5ok" path="res://scripts/ui/death_ui.gd" id="1_628hd"]
+[ext_resource type="FontFile" uid="uid://50mmi1flijpy" path="res://assets/external/Ignotum_Font_1_10/TrueType (.ttf)/Ignotum-Bold.ttf" id="2_saat1"]
+
+[sub_resource type="FontVariation" id="FontVariation_a37oe"]
+base_font = ExtResource("2_saat1")
+spacing_glyph = 3
+
+[node name="DeathUI" type="Control" unique_id=1565929142]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_628hd")
+death_label_path = NodePath("DeathText")
+red_overlay_path = NodePath("RedOverlay")
+black_overlay_path = NodePath("BlackOverlay")
+eyelid_top_path = NodePath("EyelidTop")
+eyelid_bottom_path = NodePath("EyelidBottom")
+
+[node name="RedOverlay" type="ColorRect" parent="." unique_id=1666169493]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.62, 0, 0, 0.58)
+
+[node name="DeathText" type="Label" parent="." unique_id=1970450445]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -21.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_a37oe")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BlackOverlay" type="ColorRect" parent="." unique_id=1339528799]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="EyelidTop" type="ColorRect" parent="." unique_id=1565314607]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="EyelidBottom" type="ColorRect" parent="." unique_id=1144216339]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

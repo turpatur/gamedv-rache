@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5gojxhitfgpj"]
+
+[ext_resource type="Texture2D" uid="uid://b655ma6ghpgqq" path="res://assets/external/NoirNights_PetricakeGames.png" id="1_c3y40"]
+[ext_resource type="Script" uid="uid://c0o05fagccgc5" path="res://scripts/interactables/photo.gd" id="2_bw0ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3y40"]
+size = Vector2(48, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw0ua"]
+size = Vector2(75.0049, 107.990814)
+
+[node name="Photo" type="StaticBody2D" unique_id=11781511]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736864086]
+position = Vector2(24, 45)
+shape = SubResource("RectangleShape2D_c3y40")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1566253629]
+scale = Vector2(3, 3)
+texture = ExtResource("1_c3y40")
+centered = false
+region_enabled = true
+region_rect = Rect2(208, 65, 16, 31)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=494742032]
+script = ExtResource("2_bw0ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=597101188]
+position = Vector2(25.497429, 49.000553)
+rotation = 0.0025712643
+shape = SubResource("RectangleShape2D_bw0ua")
