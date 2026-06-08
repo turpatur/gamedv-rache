@@ -219,7 +219,7 @@ func all_ledger_profiles_seen() -> bool:
 	return true
 
 func can_open_verdict() -> bool:
-	return true
+	return core_clues_seen() and has_died
 
 func can_true_end() -> bool:
 	return (
