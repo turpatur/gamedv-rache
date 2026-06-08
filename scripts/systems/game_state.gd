@@ -219,7 +219,7 @@ func all_ledger_profiles_seen() -> bool:
 	return true
 
 func can_open_verdict() -> bool:
-	return bool(route["has_valid_death"]) and core_clues_seen() and int(clue_state["photo"]) == MemoryState.CLEAR
+	return true
 
 func can_true_end() -> bool:
 	return (
@@ -271,13 +271,13 @@ func current_lead() -> String:
 		return "The room is quiet. The watch isn't."
 	if can_open_verdict():
 		return "Time to name a name."
-	if clue_state["table"] == MemoryState.UNKNOWN:
+	if clue_state["table"] == MemoryState.UNKNOWN or clue_state["table"] == MemoryState.HAZY:
 		return "A glass of bitter wine."
-	if clue_state["body"] == MemoryState.UNKNOWN:
+	if clue_state["body"] == MemoryState.UNKNOWN or clue_state["body"] == MemoryState.HAZY:
 		return "A body in a mahogany chair."
 	if clue_state["rache"] == MemoryState.UNKNOWN or clue_state["rache"] == MemoryState.HAZY:
 		return "Five bloody letters."
-	if clue_state["door"] == MemoryState.UNKNOWN:
+	if clue_state["door"] == MemoryState.UNKNOWN or clue_state["door"] == MemoryState.HAZY:
 		return "The door is locked tight."
 	if clue_state["photo"] == MemoryState.UNKNOWN:
 		return "The shelf has the names."

@@ -58,13 +58,9 @@ func _input(event: InputEvent) -> void:
 
 	match state.game_state:
 		GameStateScript.ScreenState.TITLE:
-			if event.keycode in [KEY_E, KEY_SPACE, KEY_ENTER]:
-				_start_game()
+			pass
 		GameStateScript.ScreenState.ENDING:
-			if event.keycode in [KEY_R, KEY_ENTER, KEY_SPACE]:
-				_on_restart_pressed()
-			elif event.keycode == KEY_ESCAPE:
-				get_tree().quit()
+			pass
 		GameStateScript.ScreenState.VERDICT:
 			pass
 		GameStateScript.ScreenState.PLAYING:
@@ -123,7 +119,7 @@ func _bind_ui() -> void:
 		return
 	ui_root.start_game_requested.connect(_start_game)
 	ui_root.restart_requested.connect(_on_restart_pressed)
-	ui_root.quit_requested.connect(func(): get_tree().quit())
+	ui_root.quit_requested.connect(_show_title)
 	ui_root.choice_selected.connect(func(index: int): narrative.pick_choice(index))
 	ui_root.verdict_submitted.connect(_submit_verdict)
 

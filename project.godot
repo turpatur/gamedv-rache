@@ -25,6 +25,7 @@ SoundManager="*res://autoload/sound_manager.gd"
 
 window/size/viewport_width=860
 window/size/viewport_height=620
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

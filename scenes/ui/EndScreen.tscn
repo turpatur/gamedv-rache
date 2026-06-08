@@ -196,7 +196,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
 theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
-text = "QUIT"
+text = "MAIN MENU"
 
 [node name="HintLabel" type="Label" parent="." unique_id=259145844]
 layout_mode = 0

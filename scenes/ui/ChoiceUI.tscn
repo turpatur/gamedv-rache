@@ -47,6 +47,8 @@ offset_bottom = 620.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Margin" unique_id=493951322]
 layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_right = 80
 
 [node name="OptionsContainer" type="VBoxContainer" parent="Margin/MarginContainer" unique_id=1978875194]
 layout_mode = 2
